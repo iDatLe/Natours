@@ -65,7 +65,7 @@ body {
   text-align: center; }
 
 .heading-primary {
-  color: #fff;
+  color: white;
   text-transform: uppercase;
   backface-visibility: hidden;
   margin-bottom: 6rem; }
@@ -131,8 +131,12 @@ body {
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
   /* x, y, blur amount */ }
 
+.btn:active {
+  transform: translateY(-1px);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
+
 .btn--white {
-  background-color: #fff;
+  background-color: white;
   color: #777; }
 
 /* This is the start of the hover fade out effect */
@@ -152,7 +156,7 @@ body {
   transition: all .4s; }
 
 .btn--white::after {
-  background-color: #fff; }
+  background-color: white; }
 
 /* This will give the button hover the fade out effect */
 .btn:hover::after {
