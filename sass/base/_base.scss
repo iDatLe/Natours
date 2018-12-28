@@ -1,0 +1,22 @@
+/* This part resets the whole styling */
+*,
+*::after,
+*::before { 
+    /* Declares each and every element */ 
+    margin: 0; 
+    /* By default, browsers apply a margin & padding already */
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    /* This describes what 1 rem will be */
+    font-size: 62.5%; 
+    /* Set it to 62.5% (100% divide by default browser's 16px) so that it'll be easier to use rem due to inheritance values */
+    /* It'll also be easier to use media queries */
+}
+
+body { 
+    box-sizing: border-box; 
+    /* Changes model so margin & padding isn't added to total width or height. Instead, they are separate */
+}
