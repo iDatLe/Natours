@@ -1,7 +1,7 @@
 .row {
     max-width: $grid-width;
     /* Max width means if there's not enough space in viewport then it will fill whatever it can */
-    background-color: #eee;
+
     margin: 0 auto;
     /* Used to center a block element inside of another block element */
 
@@ -16,7 +16,6 @@
     /* THe * symbol will select all elements that CONTAIN with "...." */
     /* THe $ symbol will select all elements that ENDS with "...." */
     [class^="col-"] {
-        background-color: orangered;
         float: left;
 
         /* We want the margin on the right of all elements except the last element */
