@@ -1,0 +1,45 @@
+.card {
+
+    perspective: 150rem;
+    -moz-perspective: 150rem;
+    /* Perspective gives it the flipping effect */
+    /* Although the hover is what changes perspective, the perspective has to be in parent element */
+    position: relative;
+    height: 50rem;
+
+    &__side {
+        color: white;
+        font-size: 2rem;
+        height: 50rem;
+        transition: all .8s ease;
+        position: absolute;
+        /* Absolute will collapse the height. Can't clear sides so give height in parent element */
+        top: 0;
+        left: 0;
+        width: 100%;
+        backface-visibility: hidden;
+        border-radius: 3px;
+        box-shadow: 0 1.5rem 4rem rgba($color-black, .15);
+
+        &--front {
+            background-color: $color-white;
+        }
+
+        &--back {
+            transform: rotateY(180deg);
+            /* Backside is already at 180 degrees */
+
+            &-1 {
+                background-image: linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark)
+            }
+        }
+    }
+
+    &:hover &__side--front {
+        transform: rotateY(180deg);
+    }
+
+    &:hover &__side--back {
+        transform: rotateY(0);
+    }
+}

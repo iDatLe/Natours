@@ -4,3 +4,30 @@
     margin-top: -20vh;
     /* -20vh obtained from taking height 95vh and subtracting 75vh from polygon in header.scss */
 }
+
+.section-features {
+    padding: 20rem 0;
+
+    background-image: linear-gradient(
+        to right bottom, 
+        rgba($color-primary-light, 0.8), 
+        rgba($color-primary-dark, 0.8)), 
+        url(../img/nat-4.jpg); 
+    /* Gradient is always back-ground image. From light green to dark green*/
+    background-size: cover;
+
+    transform: skewY(-7deg);
+    margin-top: -12rem;
+
+    & > * {
+    /* Child selector. But only everything that's direct of section-features */
+        transform: skewY(7deg);
+    }
+
+}
+
+.section-tours {
+    background-color: $color-gray-light-1;
+    padding: 25rem 0 50rem 0;
+    margin-top: -12rem;
+}
