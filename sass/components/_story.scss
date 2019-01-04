@@ -1,0 +1,67 @@
+.story {
+    width: 75%;
+    margin: 0 auto;
+    /* Centered like this because it's a block element inside a block element */
+    box-shadow: 0 3rem 6rem rgba($color-black, .1);
+    background-color: rgba($color-white, .6);
+    border-radius: 3px;
+    padding: 6rem;
+    padding-left: 9rem;
+    font-size: $default-font-size;
+    transform: skewX(-12deg);
+    
+
+    &__shape {
+        height: 15rem;
+        width: 15rem;
+        float: left;
+        -webkit-shape-outside: circle(50% at 50% 50%);
+        shape-outside: circle(50% at 50% 50%);
+        /* This will have text flow around circle.
+        50% of height and width. 
+        Only works if floated and has defined dimensions (height/ width) */
+        clip-path: circle(50% at 50% 50%);
+        transform: translate(-3rem, -2rem) skewX(12deg);
+        position: relative;
+    }
+
+    &__img {
+        height: 100%;
+        /* Image is inside a shape that has a defined width.
+        But because image width bigger than set width, we set height to 100% */
+        transform: translateX(-4rem) scale(1.4);
+        transition: all .5s;
+    }
+
+    &__text {
+        transform: translateY(-2rem) skewX(12deg)
+    }
+
+    &__caption {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%);
+        color: $color-white;
+        text-transform: uppercase;
+        font-size: 1.7rem;
+        text-align: center;
+        opacity: 0;
+        transition: all .5s;
+        backface-visibility: hidden;
+        /* When something happens in translate or animation, use this to fix it */
+    }
+
+    &:hover &__caption {
+        /* .story:hover .story__caption if hover over story then the caption will appear */
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+
+    &:hover &__img {
+        transform: translateX(-4rem) scale(1);
+        filter: blur(3px) brightness(80%);
+    }
+
+
+}

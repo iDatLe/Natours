@@ -40,6 +40,15 @@
         }
     }
 
+    &--green {
+        background-color: $color-primary;
+        color: $color-white;
+
+        &::after {
+            background-color: $color-primary;
+        }
+    }
+
     /* This is the start of the hover fade out effect */
     &::after { 
         /* This will be below the element. Child of element */
